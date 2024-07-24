@@ -1,21 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginPage } from "./auth/pages/LoginPage";
-import { MarvelPage } from "./heroes/pages/MarvelPage";
-import { DcPage } from "./heroes/pages/DcPage";
+import { Root } from "./heroes/pages/Root/Root";
+import { MarvelPage } from "./heroes/pages/Marvel/MarvelPage";
+import { DcPage } from "./heroes/pages/Dc/DcPage";
 
-export const routes = createBrowserRouter(
+export const router = createBrowserRouter(
     [
         {
             path: "/",
-            element: <LoginPage />,
+            element: <Root />,
+            children: [
+                {
+                  path: "/marvel",
+                  element: <MarvelPage />,
+                },
+                {
+                    path: "/dc",
+                    element: <DcPage />,
+                }
+              ],
         },
-        {
-            path: "marvel",
-            element: <MarvelPage />,
-        },
-        {
-            path: "dc",
-            element: <DcPage />,
-        },
-      ]
+    ]
 );
