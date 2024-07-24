@@ -10,7 +10,7 @@ export const HeroListItem = (
         characters
     }
 ) => {
-    const img = `./src/assets/heroes/${id}.jpg`;
+    const img = `assets/heroes/${id}.jpg`;
     const navigate = useNavigate();
     const onNavigate = () => {
         navigate(`/hero/${id}`);

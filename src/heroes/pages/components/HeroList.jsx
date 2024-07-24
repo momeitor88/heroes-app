@@ -1,8 +1,9 @@
+import { useMemo } from 'react';
 import { getHeroes } from '../../../services';
 import { HeroListItem } from './HeroListItem';
 
 export const HeroList = ({ published }) => {
-    const heroes = getHeroes(published);
+    const heroes = useMemo(()=> getHeroes(published), [published]);
     return (
     <>
         <ul>
