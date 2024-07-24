@@ -1,9 +1,10 @@
+import { RouterProvider } from 'react-router-dom'
+import { routes } from './routes'
 
-export const HeroesApp = () => {
+const HeroesApp = () => {
   return (
-    <>
-        <h1>HeroesApp</h1>
-        <hr />
-    </>
+    <RouterProvider router={routes} />
   )
 }
+
+export default HeroesApp
